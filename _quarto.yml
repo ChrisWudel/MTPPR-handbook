@@ -1,0 +1,29 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "The Little Handbook for MTPPR"
+  subtitle: '**M**ulti-**T**rait **P**oint **P**attern **R**econstruction'
+  author: 
+    - Chris Wudel
+  
+  date: "08/07/2024"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - Simple application example.qmd
+    - Further application examples.qmd
+    - Specialized application.qmd
+    - summary and references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+
