@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; Introduction – The Little Handbook for MTPPR</title>
+<title>2&nbsp; Simple application example – The Little Handbook for MTPPR</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./simple_application_example.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./further_application_examples.html" rel="next">
+<link href="./intro.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -81,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./simple_application_example.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Simple application example</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -114,13 +148,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link active">
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./simple_application_example.html" class="sidebar-item-text sidebar-link">
+  <a href="./simple_application_example.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Simple application example</span></span></a>
   </div>
 </li>
@@ -155,7 +189,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Simple application example</span></h1>
 </div>
 
 
@@ -172,93 +206,89 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>M</strong>ulti-<strong>T</strong>rait <strong>P</strong>oint <strong>P</strong>attern <strong>R</strong>econstruction (MTPPR) is a statistical method used to analyze and reconstruct spatial patterns. Unlike traditional methods, MTPPR enables the reconstruction of spatial point distributions while considering multiple associated traits (marks). Previous methods for reconstructing point patterns either only consider a single mark or multiple marks independently, neglecting their correlations. MTPPR employs various second-order summary statistics of point pattern analysis, such as the pair correlation function and the mark correlation function.</p>
-<p><strong><em>Figure:</em></strong> <em>This illustration depicts the issue in reconstructing dot patterns where the correlations between the marks are not considered. This results in unrealistic proportions, as illustrated here by the disproportionate trees.</em></p>
-<div class="quarto-figure quarto-figure-center">
+<p>The following example demonstrates a simple application of <strong>M</strong>ulti-<strong>T</strong>rait <strong>P</strong>oint <strong>P</strong>attern <strong>R</strong>econstruction (MTPPR) by Wudel et al.&nbsp;(2023). It illustrates reconstruction using fictitious datasets that incorporate multiple traits simultaneously. The required libraries must be loaded beforehand.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/reconstruct_pattern_multi.R"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/compute_statistics.R"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/dummy_transf.R"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/energy_fun.R"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/calc_moments.R"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/select_kernel.R"</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/plot.rd_multi.R"</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/sample_points.R"</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spatstat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Please note that the maximum number of iterations has been set to <em>max_steps = 10000</em> and <em>n_repetitions = 3</em> in this example to keep computation time low. No weighting of different summary statistics has been performed, which may be necessary for different applications (e.g., forest stands) to achieve optimal results. For real-world applications, it is advisable to adjust these parameters accordingly. Additionally, in the vignette, <em>verbose = FALSE</em> has been set to minimize print output. We recommend using the default setting verbose = TRUE when running the code to see progress reports.</p>
+<p>The next step is to load the point pattern, here is an example of a random point pattern with several marks to show the structure of the data used.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>xr <span class="ot">&lt;-</span> <span class="dv">500</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>yr <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>N  <span class="ot">&lt;-</span> <span class="dv">400</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>y  <span class="ot">&lt;-</span> <span class="fu">runif</span>(N, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> yr)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>x  <span class="ot">&lt;-</span> <span class="fu">runif</span>(N, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> xr)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>species  <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">"A"</span>,<span class="st">"B"</span>), N, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>diameter <span class="ot">&lt;-</span> <span class="fu">runif</span>(N, <span class="fl">0.1</span>, <span class="fl">0.4</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>random   <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">dbh =</span> diameter, <span class="at">species =</span> <span class="fu">factor</span>(species))</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>marked_pattern <span class="ot">&lt;-</span> <span class="fu">as.ppp</span>(random, <span class="at">W =</span> <span class="fu">owin</span>(<span class="fu">c</span>(<span class="dv">0</span>, xr), <span class="fu">c</span>(<span class="dv">0</span>, yr)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The point pattern must contain the following data An x and y coordinate, a metric mark (in metres) and a nominal mark defined as a factor. The order must be respected. Now the reconstruction with several marks can be started with the following code. Note that the maximum number of iterations has been set to <em>max_steps = 10000</em> to keep the computation time for this example to a minimum. For an application, this value should be increased according to the number of points in the pattern.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>reconstruction <span class="ot">&lt;-</span> <span class="fu">reconstruct_pattern_multi</span>(marked_pattern, <span class="at">n_repetitions =</span> <span class="dv">1</span>, <span class="at">max_steps =</span> <span class="dv">10000</span>, <span class="at">issue =</span> <span class="dv">5000</span>, <span class="at">verbose =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+&gt; Progress:  || iterations: 0 || Simulation progress: 0% || energy = 0.01975 || energy improvement = 0
+&gt; Progress:  || iterations: 5000 || Simulation progress: 50% || energy = 0.00242 || energy improvement = 266
+&gt; Progress:  || iterations: 10000 || Simulation progress: 100% || energy = 0.00234 || energy improvement = 449</code></pre>
+</div>
+</div>
+<p>As a result, you will receive a list containing a variety of information, for example, the reference pattern, the reconstructed pattern, the number of successful actions, the energy development and much more. If you wish to perform several reconstructions of the same reference pattern, you must increase n_repetitions to the desired number.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>reconstruction_2 <span class="ot">&lt;-</span> <span class="fu">reconstruct_pattern_multi</span>(marked_pattern, <span class="at">n_repetitions =</span> <span class="dv">2</span>, <span class="at">max_steps =</span> <span class="dv">10000</span>, <span class="at">issue =</span> <span class="dv">5000</span>, <span class="at">verbose =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+&gt; Progress: reconstruction_1 || iterations: 0 || Simulation progress: 0% || energy = 0.12226 || energy improvement = 0
+&gt; Progress: reconstruction_1 || iterations: 5000 || Simulation progress: 50% || energy = 0.00241 || energy improvement = 318
+&gt; Progress: reconstruction_1 || iterations: 10000 || Simulation progress: 100% || energy = 0.00238 || energy improvement = 495
+
+
+&gt; Progress: reconstruction_2 || iterations: 0 || Simulation progress: 0% || energy = 0.11459 || energy improvement = 0
+&gt; Progress: reconstruction_2 || iterations: 5000 || Simulation progress: 50% || energy = 0.00334 || energy improvement = 346
+&gt; Progress: reconstruction_2 || iterations: 10000 || Simulation progress: 100% || energy = 0.00326 || energy improvement = 557</code></pre>
+</div>
+</div>
+<p>To activate a visualisation of the reconstruction that shows the changes in the pattern at the relevant time, you must proceed as follows.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>reconstruction_3 <span class="ot">&lt;-</span> <span class="fu">reconstruct_pattern_multi</span>(marked_pattern, <span class="at">n_repetitions =</span> <span class="dv">1</span>, <span class="at">max_steps =</span> <span class="dv">10000</span>, <span class="at">show_graphic =</span> <span class="cn">TRUE</span>, <span class="at">issue =</span> <span class="dv">5000</span>, <span class="at">verbose =</span> <span class="cn">TRUE</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+&gt; Progress:  || iterations: 0 || Simulation progress: 0% || energy = 0.06776 || energy improvement = 0
+&gt; Progress:  || iterations: 5000 || Simulation progress: 50% || energy = 0.00342 || energy improvement = 298
+&gt; Progress:  || iterations: 10000 || Simulation progress: 100% || energy = 0.00336 || energy improvement = 478</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
 <figure class="figure">
-<p><img src="images/comic.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1000"></p>
+<p><img src="simple_application_example_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="681"></p>
 </figure>
 </div>
-<p>This method is crucial in fields like ecology, biology, and geography, where understanding the spatial distribution of entities and their traits is essential. By considering both the spatial locations and the various traits of points, MTPPR allows researchers to uncover complex interactions and dependencies that influence the arrangement and dynamics of the systems under study.</p>
-<p>For example, in ecology, MTPPR can be used to reconstruct the distribution of different tree species in a forest, taking into account attributes such as age, height, and health status. This provides insights into ecological processes such as competition, habitat preferences, and the impact of environmental factors. Similarly, in epidemiology, MTPPR can help understand the spread of diseases by correlating spatial data with demographic and environmental traits.</p>
-<section id="key-concepts" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="key-concepts">Key Concepts</h4>
-<ol type="1">
-<li><p><strong>Point Patterns</strong>:</p>
-<ul>
-<li><p>Spatial data points representing the positions of objects or events within a defined area.</p></li>
-<li><p>Examples: Locations of trees in a forest, distribution of animal burrows, spread of disease cases.</p></li>
-</ul></li>
-<li><p><strong>Traits</strong>:</p>
-<ul>
-<li><p>Additional attributes or characteristics associated with each point.</p></li>
-<li><p>Examples: Tree species, age, height, health status.</p></li>
-</ul></li>
-<li><p><strong>Multi-Trait Analysis</strong>:</p>
-<ul>
-<li><p>Simultaneous consideration of multiple attributes to understand their influence on spatial arrangement.</p></li>
-<li><p>Can reveal complex interactions and dependencies between traits.</p></li>
-</ul></li>
-<li><p><strong>Reconstruction</strong>:</p>
-<ul>
-<li><p>Generation of statistically similar point patterns for various applications through reconstruction algorithms.</p></li>
-<li><p>Examples: Creating null model patterns for spatial point pattern analysis and constructing artificial datasets suitable for initializing forest ABMs and other stand simulators.</p></li>
-</ul></li>
-</ol>
-</section>
-<section id="steps-in-mtppr" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="steps-in-mtppr">Steps in MTPPR</h4>
-<ol type="1">
-<li><p><strong>Data Collection</strong>:</p>
-<ul>
-<li>Gathering spatial data along with associated traits through field surveys, remote sensing, or other methods.</li>
-</ul></li>
-<li><p><strong>Spatial Analysis</strong>:</p>
-<ul>
-<li><p>Analyzing the spatial arrangement of points using techniques such as Ripley’s K-function, pair correlation function, or spatial autocorrelation.</p></li>
-<li><p>Assessing the distribution (clustered, random, regular) and the influence of spatial scale.</p></li>
-</ul></li>
-<li><p><strong>Trait Analysis</strong>:</p>
-<ul>
-<li>Evaluating the distribution and correlation of traits using methods like the mark correlation function.</li>
-</ul></li>
-<li><p><strong>Model Construction</strong>:</p>
-<ul>
-<li><p>Developing models that integrate spatial and trait information using statistical models (e.g., spatial point process models).</p></li>
-<li><p>Aim: Reconstructing the underlying processes leading to the observed multi-trait point pattern.</p></li>
-</ul></li>
-<li><p><strong>Reconstruction and Validation</strong>:</p>
-<ul>
-<li><p>Reconstructing point patterns based on the developed models to predict spatial arrangements under various scenarios.</p></li>
-<li><p>Validating models by comparing simulated patterns with actual observations.</p></li>
-</ul></li>
-<li><p><strong>Interpretation</strong>:</p>
-<ul>
-<li>Interpreting results to gain insights into ecological, biological, or geographical processes.</li>
-</ul></li>
-</ol>
-</section>
-<section id="applications" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="applications">Applications</h4>
-<ul>
-<li><p><strong>Ecology</strong>:</p>
-<ul>
-<li><p>Generating realistic and statistically similar spatial patterns.</p></li>
-<li><p>Understanding the coexistence and competition among plant species.</p></li>
-<li><p>Studying the spatial distribution of animal populations and their habitat preferences.</p></li>
-</ul></li>
-<li><p><strong>Epidemiology</strong>:</p>
-<ul>
-<li>Analyzing the spread of diseases based on environmental factors and population characteristics.</li>
-</ul></li>
-<li><p><strong>Urban Planning</strong>:</p>
-<ul>
-<li>Assessing the spatial distribution of urban features (e.g., green spaces, buildings) and their associated traits (e.g., building types, land use).</li>
-</ul></li>
-</ul>
+</div>
+</div>
+<p>Finally, you can use the following function to view different summary statistics of the reference pattern (black line) compared to the reconstructed pattern (grey line). For this, however, the listed libraries must be loaded additionally.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(reconstruction)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Progress in the creation of the figures: 100% </code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="simple_application_example_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="681"></p>
+</figure>
+</div>
+</div>
+</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -683,13 +713,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Welcome">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Welcome</span>
+      <a href="./intro.html" class="pagination-link" aria-label="Introduction">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./simple_application_example.html" class="pagination-link" aria-label="Simple application example">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Simple application example</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./further_application_examples.html" class="pagination-link" aria-label="Further application examples">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Further application examples</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
