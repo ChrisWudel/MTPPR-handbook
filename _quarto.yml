@@ -1,15 +1,21 @@
 project:
   type: book
+  output-dir: docs
 
 book:
-  title: "test"
-  author: "Jane Doe"
-  date: "9.7.2024"
+  title: "The Little Handbook for MTPPR"
+  subtitle: '**M**ulti-**T**rait **P**oint **P**attern **R**econstruction'
+  author: 
+    - Chris Wudel
+  
+  date: "08/07/2024"
   chapters:
     - index.qmd
     - intro.qmd
-    - summary.qmd
-    - references.qmd
+    - simple_application_example.qmd
+    - further_application_examples.qmd
+    - specialized_application.qmd
+    - summary_references.qmd
 
 bibliography: references.bib
 

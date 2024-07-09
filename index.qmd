@@ -1,9 +1,8 @@
-# Preface {.unnumbered}
+# Welcome {.unnumbered}
 
-This is a Quarto book.
+**M**ulti-**T**rait **P**oint **P**attern **R**econstruction (MTPPR) is an advanced method for analyzing and modeling spatial patterns across various scientific disciplines such as ecology, biology, and geography. MTPPR allows the reconstruction of spatial point distributions, considering multiple associated traits or attributes. This handbook provides an overview of the key concepts, steps, and applications of MTPPR.
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+If you would like to find out more about multi-trait point pattern reconstruction, read <a href="https://besjournals.onlinelibrary.wiley.com/doi/10.1111/2041-210X.14206" target="_blank">Wudel et al. (2023)</a> or consult the references.
 
-```{r}
-1 + 1
-```
+
+![](images/cover.png){fig-align="center" width="400"}

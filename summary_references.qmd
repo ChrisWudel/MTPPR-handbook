@@ -1,0 +1,33 @@
+# Summary and references
+
+This Handbook is intended to facilitate the use of MTPPR and to illustrate its broad application through various examples. The method is still under development and will be regularly updated with changes.
+
+If you have any questions, please contact the author:
+
+**Chris Wudel**, Email: [chris.wudel\@tu-dresden.de]{.underline}
+
+Or one of the following co-authors:
+
+-   **Dr. Robert Schlicht** (co-developer), Email: [robert.schlicht\@tu-dresden.de]{.underline}
+
+-   **Prof. Dr. Uta Berge**r (supervised and revised), Email: [uta.berger\@tu-dresden.de]{.underline}
+
+-   **Dr. Franka Huth** (data collection and forestry consultation), Email: [franka.huth\@tu-dresden.de]{.underline}
+
+-   **Nora Meyer** (data collection TLS), Email: [nora.meyer\@tu-dresden.de]{.underline}
+
+-   **Alexandra Wehnert** (data collection), Email: [alexandra.wehnert\@tu-dresden.de]{.underline}
+
+# References {.unnumbered}
+
+Further references, for example regarding the method description, can be found in the respective publications.
+
+-   Fichtner, I., van der Maaten-Theunissen, M., 2022. Marteloscope data of the experimental plot, Naundorf 710 b1 (Saxony, Germany 2020). Zenodo. <https://doi.org/10.5281/zenodo.7147868>
+
+-   Meyer, N., Wudel, C., 2024. Terrestrial laser scan data of a experimental plot in Forstamt Billenhagen, 340 a31 (Mecklenburg- Vorpommern, Germany 2023). <https://doi.org/10.5281/zenodo.10550778>
+
+-   Wudel, C., Huth, F., Wehnert, A., 2022a. Individual tree data of the temporary test plot Neusorgefeld 5138 - VERMOS project. Zenodo. <https://doi.org/10.5281/zenodo.7157076>
+
+-   Wudel, C., Schlicht, R., Berger, U., 2023. Multi-trait point pattern reconstruction of plant ecosystems. Methods Ecol. Evol. 14, 2668--2679. <https://doi.org/https://doi.org/10.1111/2041-210X.14206>
+
+-   Wudel, C., Schlicht, R., Berger, U., 2022b. Point-pattern-reconstruction. Zenodo. <https://doi.org/10.5281/zenodo.7228767>
