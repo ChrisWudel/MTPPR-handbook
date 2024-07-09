@@ -67,8 +67,8 @@ reconstruction <- reconstruct_pattern_multi(
   sd                = "step",
   steps_tol         = 1000,   
   tol               = 1e-4,   
-  w_markcorr        = c(m_m=1,one_one=0,  all=1, m_all=1, all_all=1, m_m0=1, one_one0=0, all0=1, m_all0=1,                                  all_all0=1),
-  prob_of_actions   = c(move_coordinate = 0.4, switch_coords = 0.1, exchange_mark_one = 0.1, exchange_mark_two =                            0.1, pick_mark_one = 0.2, pick_mark_two = 0.1, delete_point = 0.0, add_point = 0.0), 
+  w_markcorr        = c(m_m=1,one_one=0,  all=1, m_all=1, all_all=1, m_m0=1, one_one0=0, all0=1, m_all0=1, all_all0=1),
+  prob_of_actions   = c(move_coordinate = 0.4, switch_coords = 0.1, exchange_mark_one = 0.1, exchange_mark_two = 0.1, pick_mark_one = 0.2, pick_mark_two = 0.1, delete_point = 0.0, add_point = 0.0), 
   k                 = 1,       
   w_statistics      = c(),              
   verbose           = TRUE)  

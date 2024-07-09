@@ -3,14 +3,14 @@
 The following example demonstrates a simple application of **M**ulti-**T**rait **P**oint **P**attern **R**econstruction (MTPPR) by Wudel et al. (2023). It illustrates reconstruction using fictitious datasets that incorporate multiple traits simultaneously. The required libraries must be loaded beforehand.
 
 ```{r message = FALSE, warning = FALSE, comment=NA}
-source("C:/Users/admin/Desktop/func/reconstruct_pattern_multi.R")
-source("C:/Users/admin/Desktop/func/compute_statistics.R")
-source("C:/Users/admin/Desktop/func/dummy_transf.R")
-source("C:/Users/admin/Desktop/func/energy_fun.R")
-source("C:/Users/admin/Desktop/func/calc_moments.R")
-source("C:/Users/admin/Desktop/func/select_kernel.R")
-source("C:/Users/admin/Desktop/func/plot.rd_multi.R")
-source("C:/Users/admin/Desktop/func/sample_points.R")
+source("https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/reconstruct_pattern_multi.R")
+source("https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/compute_statistics.R")
+source("https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/dummy_transf.R")
+source("https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/energy_fun.R")
+source("https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/calc_moments.R")
+source("https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/select_kernel.R")
+source("https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/plot.rd_multi.R")
+source("https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/sample_points.R")
 library(spatstat)
 ```
 
