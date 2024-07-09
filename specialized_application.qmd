@@ -2,7 +2,7 @@
 
 This represents **a novel workflow for predicting forest regeneration**. Initially, the canopy of a forest area and a small portion of the regeneration were captured using terrestrial laser scanning. Based on spatial statistical tree data and correlations between tree characteristics, a point pattern reconstruction method was developed, building upon the work of Wudel et al. (2023). This method facilitates the prediction of regeneration across the entire area with high accuracy.
 
-![](workflow.png)
+![](images/workflow.png)
 
 ***Figure:** Conceptual presentation of the new innovative workflow for data acquisition and reconstruction of forest regeneration (LiDAR = Light Detection and Ranging). a) Recording regeneration on a small area and b) recording of the upper stand trees at the whole forest area.*
 
