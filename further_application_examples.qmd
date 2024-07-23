@@ -1,6 +1,6 @@
 # Further application examples
 
-In the following, further examples of the simple application of **M**ulti-**T**rait **P**oint **P**attern **R**econstruction (MTPPR) by Wudel et al. (2023) are presented. These are standard applications, meaning that reconstructions are performed without enlargements or reductions of the reconstruction pattern and without edge correction.
+In the following, further examples of the simple application of **M**ulti-**T**rait **P**oint **P**attern **R**econstruction (MTPPR) presented in Wudel et al. (2023) are presented. These are standard applications, meaning that reconstructions are performed without enlargements or reductions of the reconstruction pattern and without edge correction.
 
 First, the necessary functions and packages will be loaded. If individual R packages are not installed, install them as follows: `install.packages("package name")`.
 

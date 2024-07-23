@@ -6,7 +6,7 @@
 
 ![](images/comic.png){fig-align="center" width="1000"}
 
-This method is crucial in fields like ecology, biology, and geography, where understanding the spatial distribution of entities and their traits is essential. By considering both the spatial locations and the various traits of points, MTPPR allows researchers to uncover complex interactions and dependencies that influence the arrangement and dynamics of the systems under study.
+This method is crucial in fields like ecology, biology, and geography, where understanding the spatial distribution of entities and their traits is essential. By considering both the spatial locations and the various traits of points, MTPPR allows users to uncover complex interactions and dependencies that influence the arrangement and dynamics of the systems under study.
 
 For example, in ecology, MTPPR can be used to reconstruct the distribution of different tree species in a forest, taking into account attributes such as age, height, and health status. This provides insights into ecological processes such as competition, habitat preferences, and the impact of environmental factors. Similarly, in epidemiology, MTPPR can help understand the spread of diseases by correlating spatial data with demographic and environmental traits.
 
@@ -14,74 +14,74 @@ For example, in ecology, MTPPR can be used to reconstruct the distribution of di
 
 1.  **Point Patterns**:
 
-    -   Spatial data points representing the positions of objects or events within a defined area.
+    -   Spatial data points representing the positions of objects or events within a defined area
 
-    -   Examples: Locations of trees in a forest, distribution of animal burrows, spread of disease cases.
+    -   Examples: Locations of trees in a forest, distribution of animal burrows, spread of disease cases
 
 2.  **Traits**:
 
-    -   Additional attributes or characteristics associated with each point.
+    -   Additional attributes or characteristics associated with each point
 
-    -   Examples: Tree species, age, height, health status.
+    -   Examples: Tree species, age, height, health status
 
 3.  **Multi-Trait Analysis**:
 
-    -   Simultaneous consideration of multiple attributes to understand their influence on spatial arrangement.
+    -   Simultaneous consideration of multiple attributes to understand their influence on spatial arrangement
 
-    -   Can reveal complex interactions and dependencies between traits.
+    -   Can reveal complex interactions and dependencies between traits
 
 4.  **Reconstruction**:
 
-    -   Generation of statistically similar point patterns for various applications through reconstruction algorithms.
+    -   Generation of statistically similar point patterns for various applications through reconstruction algorithms
 
-    -   Examples: Creating null model patterns for spatial point pattern analysis and constructing artificial datasets suitable for initializing forest ABMs and other stand simulators.
+    -   Examples: Creating null model patterns for spatial point pattern analysis and constructing artificial datasets suitable for initializing forest ABMs and other stand simulators
 
 #### Steps in MTPPR {.unnumbered}
 
 1.  **Data Collection**:
 
-    -   Gathering spatial data along with associated traits through field surveys, remote sensing, or other methods.
+    -   Gathering spatial data along with associated traits through field surveys, remote sensing, or other methods
 
 2.  **Spatial Analysis**:
 
-    -   Analyzing the spatial arrangement of points using techniques such as Ripley's K-function, pair correlation function, or spatial autocorrelation.
+    -   Analyzing the spatial arrangement of points using techniques such as Ripley's K-function, pair correlation function, or spatial autocorrelation
 
-    -   Assessing the distribution (clustered, random, regular) and the influence of spatial scale.
+    -   Assessing the distribution (clustered, random, regular) and the influence of spatial scale
 
 3.  **Trait Analysis**:
 
-    -   Evaluating the distribution and correlation of traits using methods like the mark correlation function.
+    -   Evaluating the distribution and correlation of traits using methods like the mark correlation function
 
 4.  **Model Construction**:
 
-    -   Developing models that integrate spatial and trait information using statistical models (e.g., spatial point process models).
+    -   Developing models that integrate spatial and trait information using statistical models (e.g., spatial point process models)
 
-    -   Aim: Reconstructing the underlying processes leading to the observed multi-trait point pattern.
+    -   Aim: Reconstructing the underlying processes leading to the observed multi-trait point pattern
 
 5.  **Reconstruction and Validation**:
 
-    -   Reconstructing point patterns based on the developed models to predict spatial arrangements under various scenarios.
+    -   Reconstructing point patterns based on the developed models to predict spatial arrangements under various scenarios
 
-    -   Validating models by comparing simulated patterns with actual observations.
+    -   Validating models by comparing simulated patterns with actual observations
 
 6.  **Interpretation**:
 
-    -   Interpreting results to gain insights into ecological, biological, or geographical processes.
+    -   Interpreting results to gain insights into ecological, biological, or geographical processes
 
 #### Applications {.unnumbered}
 
 -   **Ecology**:
 
-    -   Generating realistic and statistically similar spatial patterns.
+    -   Generating realistic and statistically similar spatial patterns
 
-    -   Understanding the coexistence and competition among plant species.
+    -   Understanding the coexistence and competition among plant species
 
-    -   Studying the spatial distribution of animal populations and their habitat preferences.
+    -   Studying the spatial distribution of animal populations and their habitat preferences
 
 -   **Epidemiology**:
 
-    -   Analyzing the spread of diseases based on environmental factors and population characteristics.
+    -   Analyzing the spread of diseases based on environmental factors and population characteristics
 
 -   **Urban Planning**:
 
-    -   Assessing the spatial distribution of urban features (e.g., green spaces, buildings) and their associated traits (e.g., building types, land use).
+    -   Assessing the spatial distribution of urban features (e.g., green spaces, buildings) and their associated traits (e.g., building types, land use)

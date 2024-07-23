@@ -25,10 +25,10 @@ library(spatstat)
 library(ggplot2)
 ```
 
-Anschlißende wird der Datensatz aufgerfen der in Github im Orner Records zu finden ist und published and freely available at the following link: <https://zenodo.org/records/10550778> (Meyer and Wudel, 2024).
+Subsequently, the dataset is retrieved from the 'Records' folder on GitHub and published and freely available at the following link: <https://zenodo.org/records/10550778> (Meyer and Wudel, 2024).
 
 ```{r message = FALSE, warning = FALSE, comment=NA}
-url <-"C:/Users/admin/Desktop/New Paper/step-by-step application/Data/TLS_core.csv"
+url <- "https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/Records/Real_datasets/Terrestrial_laser_scan_data_340_a31.csv"
 data <- read.csv(url,sep = ",", stringsAsFactors= TRUE)
 data$dbh <- as.numeric(data$dbh)
 ```
