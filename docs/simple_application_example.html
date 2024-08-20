@@ -208,15 +208,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>The following example demonstrates a simple application of <strong>M</strong>ulti-<strong>T</strong>rait <strong>P</strong>oint <strong>P</strong>attern <strong>R</strong>econstruction (MTPPR) presented in Wudel et al.&nbsp;(2023). It illustrates reconstruction using fictitious datasets that incorporate multiple traits simultaneously. The required libraries must be loaded beforehand.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/reconstruct_pattern_multi.R"</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/compute_statistics.R"</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/dummy_transf.R"</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/energy_fun.R"</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/calc_moments.R"</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/select_kernel.R"</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/plot.rd_multi.R"</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/sample_points.R"</span>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spatstat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/setup.R"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">setup</span>(</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">packages =</span> <span class="fu">c</span>(<span class="st">"spatstat"</span>),</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">func_names =</span> <span class="fu">c</span>(<span class="st">"reconstruct_pattern_multi"</span>, <span class="st">"compute_statistics"</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"dummy_transf"</span>, <span class="st">"energy_fun"</span>, <span class="st">"calc_moments"</span>, <span class="st">"select_kernel"</span>, </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"plot.rd_multi"</span>, <span class="st">"sample_points"</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Please note that the maximum number of iterations has been set to <em>max_steps = 10000</em> and <em>n_repetitions = 3</em> in this example to keep computation time low. No weighting of different summary statistics has been performed, which may be necessary for different applications (e.g., forest stands) to achieve optimal results. For real-world applications, it is advisable to adjust these parameters accordingly. Additionally, in the vignette, <em>verbose = FALSE</em> has been set to minimize print output. We recommend using the default setting verbose = TRUE when running the code to see progress reports.</p>
 <p>The next step is to load the point pattern, here is an example of a random point pattern with several marks to show the structure of the data used.</p>
@@ -236,9 +235,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>reconstruction <span class="ot">&lt;-</span> <span class="fu">reconstruct_pattern_multi</span>(marked_pattern, <span class="at">n_repetitions =</span> <span class="dv">1</span>, <span class="at">max_steps =</span> <span class="dv">10000</span>, <span class="at">issue =</span> <span class="dv">5000</span>, <span class="at">verbose =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
-&gt; Progress:  || iterations: 0 || Simulation progress: 0% || energy = 0.0895 || energy improvement = 0
-&gt; Progress:  || iterations: 5000 || Simulation progress: 50% || energy = 0.00138 || energy improvement = 298
-&gt; Progress:  || iterations: 10000 || Simulation progress: 100% || energy = 0.00135 || energy improvement = 477</code></pre>
+&gt; Progress:  || iterations: 0 || Simulation progress: 0% || energy = 0.10793 || energy improvement = 0
+&gt; Progress:  || iterations: 5000 || Simulation progress: 50% || energy = 0.00076 || energy improvement = 357
+&gt; Progress:  || iterations: 10000 || Simulation progress: 100% || energy = 0.00072 || energy improvement = 530</code></pre>
 </div>
 </div>
 <p>As a result, you will receive a list containing a variety of information, for example, the reference pattern, the reconstructed pattern, the number of successful actions, the energy development and much more. If you wish to perform several reconstructions of the same reference pattern, you must increase n_repetitions to the desired number.</p>
@@ -246,14 +245,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>reconstruction_2 <span class="ot">&lt;-</span> <span class="fu">reconstruct_pattern_multi</span>(marked_pattern, <span class="at">n_repetitions =</span> <span class="dv">2</span>, <span class="at">max_steps =</span> <span class="dv">10000</span>, <span class="at">issue =</span> <span class="dv">5000</span>, <span class="at">verbose =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
-&gt; Progress: reconstruction_1 || iterations: 0 || Simulation progress: 0% || energy = 0.13654 || energy improvement = 0
-&gt; Progress: reconstruction_1 || iterations: 5000 || Simulation progress: 50% || energy = 0.00171 || energy improvement = 326
-&gt; Progress: reconstruction_1 || iterations: 10000 || Simulation progress: 100% || energy = 0.00167 || energy improvement = 520
+&gt; Progress: reconstruction_1 || iterations: 0 || Simulation progress: 0% || energy = 0.19684 || energy improvement = 0
+&gt; Progress: reconstruction_1 || iterations: 5000 || Simulation progress: 50% || energy = 0.00134 || energy improvement = 351
+&gt; Progress: reconstruction_1 || iterations: 10000 || Simulation progress: 100% || energy = 0.00129 || energy improvement = 512
 
 
-&gt; Progress: reconstruction_2 || iterations: 0 || Simulation progress: 0% || energy = 0.11497 || energy improvement = 0
-&gt; Progress: reconstruction_2 || iterations: 5000 || Simulation progress: 50% || energy = 0.00215 || energy improvement = 331
-&gt; Progress: reconstruction_2 || iterations: 10000 || Simulation progress: 100% || energy = 0.00211 || energy improvement = 512</code></pre>
+&gt; Progress: reconstruction_2 || iterations: 0 || Simulation progress: 0% || energy = 0.10089 || energy improvement = 0
+&gt; Progress: reconstruction_2 || iterations: 5000 || Simulation progress: 50% || energy = 0.002 || energy improvement = 313
+&gt; Progress: reconstruction_2 || iterations: 10000 || Simulation progress: 100% || energy = 0.00196 || energy improvement = 484</code></pre>
 </div>
 </div>
 <p>To activate a visualisation of the reconstruction that shows the changes in the pattern at the relevant time, you must proceed as follows.</p>
@@ -261,9 +260,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>reconstruction_3 <span class="ot">&lt;-</span> <span class="fu">reconstruct_pattern_multi</span>(marked_pattern, <span class="at">n_repetitions =</span> <span class="dv">1</span>, <span class="at">max_steps =</span> <span class="dv">10000</span>, <span class="at">show_graphic =</span> <span class="cn">TRUE</span>, <span class="at">issue =</span> <span class="dv">5000</span>, <span class="at">verbose =</span> <span class="cn">TRUE</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
-&gt; Progress:  || iterations: 0 || Simulation progress: 0% || energy = 0.08328 || energy improvement = 0
-&gt; Progress:  || iterations: 5000 || Simulation progress: 50% || energy = 0.00099 || energy improvement = 308
-&gt; Progress:  || iterations: 10000 || Simulation progress: 100% || energy = 0.00094 || energy improvement = 511</code></pre>
+&gt; Progress:  || iterations: 0 || Simulation progress: 0% || energy = 0.0563 || energy improvement = 0
+&gt; Progress:  || iterations: 5000 || Simulation progress: 50% || energy = 0.00295 || energy improvement = 339
+&gt; Progress:  || iterations: 10000 || Simulation progress: 100% || energy = 0.00291 || energy improvement = 534</code></pre>
 </div>
 <div class="cell-output-display">
 <div>

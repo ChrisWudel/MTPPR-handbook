@@ -3,15 +3,15 @@
 The following example demonstrates a simple application of **M**ulti-**T**rait **P**oint **P**attern **R**econstruction (MTPPR) presented in Wudel et al. (2023). It illustrates reconstruction using fictitious datasets that incorporate multiple traits simultaneously. The required libraries must be loaded beforehand.
 
 ```{r message = FALSE, warning = FALSE, comment=NA}
-source("https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/reconstruct_pattern_multi.R")
-source("https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/compute_statistics.R")
-source("https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/dummy_transf.R")
-source("https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/energy_fun.R")
-source("https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/calc_moments.R")
-source("https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/select_kernel.R")
-source("https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/plot.rd_multi.R")
-source("https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/sample_points.R")
-library(spatstat)
+
+source("https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/setup.R")
+
+setup(
+  packages = c("spatstat"),
+  func_names = c("reconstruct_pattern_multi", "compute_statistics",
+                 "dummy_transf", "energy_fun", "calc_moments", "select_kernel", 
+                 "plot.rd_multi", "sample_points")
+  )
 ```
 
 Please note that the maximum number of iterations has been set to *max_steps = 10000* and *n_repetitions = 3* in this example to keep computation time low. No weighting of different summary statistics has been performed, which may be necessary for different applications (e.g., forest stands) to achieve optimal results. For real-world applications, it is advisable to adjust these parameters accordingly. Additionally, in the vignette, *verbose = FALSE* has been set to minimize print output. We recommend using the default setting verbose = TRUE when running the code to see progress reports.

@@ -5,21 +5,15 @@ In the following, further examples of the simple application of **M**ulti-**T**r
 First, the necessary functions and packages will be loaded. If individual R packages are not installed, install them as follows: `install.packages("package name")`.
 
 ```{r message = FALSE, warning = FALSE, comment=NA}
-source("https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/reconstruct_pattern_multi.R")
-source("https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/compute_statistics.R")
-source("https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/dummy_transf.R")
-source("https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/energy_fun.R")
-source("https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/calc_moments.R")
-source("https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/select_kernel.R")
-source("https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/plot.rd_multi.R")
-source("https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/sample_points.R")
 
-source("https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/vis_patterns.R")
-source("https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/select_data.R")
+source("https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/setup.R")
 
-library(spatstat)
-library(ggplot2)
-library(patchwork)
+setup(
+  packages = c("spatstat", "ggplot2", "patchwork"),
+  func_names = c("reconstruct_pattern_multi", "compute_statistics",
+                 "dummy_transf", "energy_fun", "calc_moments", "select_kernel", 
+                 "plot.rd_multi", "sample_points", "vis_patterns", "select_data")
+  )
 ```
 
 Now you need to define which dataset you want to use. There are 2 real datasets and 4 generated datasets available. To select a dataset, define *x* with the name of the dataset you want to use (*x \<- 'Dataset Name'*). The datasets are available under 'Records for download.
