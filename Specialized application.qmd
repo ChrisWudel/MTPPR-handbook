@@ -18,17 +18,16 @@ source("https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-r
 source("https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/plot.rd_multi.R")
 source("https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/sample_points.R")
 source("https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/edge_correction.R")
-
 source("https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/main/func/vis_patterns.R")
 
 library(spatstat)
 library(ggplot2)
 ```
 
-Anschlißende wird der Datensatz aufgerfen der in Github im Orner Records zu finden ist und published and freely available at the following link: <https://zenodo.org/records/10550778> (Meyer and Wudel, 2024).
+Anschlißende wird der Datensatz aufgerfen der in Github im Orner Records zu finden ist und published and freely available at the following link: <https://doi.org/10.5281/zenodo.13832129> (Meyer and Wudel, 2024).
 
 ```{r message = FALSE, warning = FALSE, comment=NA}
-url <-"C:/Users/admin/Desktop/New Paper/step-by-step application/Data/TLS_core.csv"
+url <-"https://raw.githubusercontent.com/ChrisWudel/Multi-trait-point-pattern-reconstruction/refs/heads/main/Records/Real_datasets/Terrestrial_laser_scan_data_340_a31.csv"
 data <- read.csv(url,sep = ",", stringsAsFactors= TRUE)
 data$dbh <- as.numeric(data$dbh)
 ```

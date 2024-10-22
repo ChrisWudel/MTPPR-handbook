@@ -24,7 +24,7 @@ Further references, for example regarding the method description, can be found i
 
 -   Fichtner, I., van der Maaten-Theunissen, M., 2022. Marteloscope data of the experimental plot, Naundorf 710 b1 (Saxony, Germany 2020). Zenodo. <https://doi.org/10.5281/zenodo.7147868>
 
--   Meyer, N., Wudel, C., 2024. Terrestrial laser scan data of a experimental plot in Forstamt Billenhagen, 340 a31 (Mecklenburg- Vorpommern, Germany 2023). <https://doi.org/10.5281/zenodo.10550778>
+-   Meyer, N., & Wudel, C. (2024). Terrestrial laser scan data of a experimental plot in Forstamt Billenhagen, 340 a31 (Mecklenburg-Vorpommern, Germany 2023) v2. Zenodo. <https://doi.org/10.5281/zenodo.13832129>
 
 -   Wudel, C., Huth, F., Wehnert, A., 2022a. Individual tree data of the temporary test plot Neusorgefeld 5138 - VERMOS project. Zenodo. <https://doi.org/10.5281/zenodo.7157076>
 
